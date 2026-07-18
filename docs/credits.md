@@ -36,7 +36,9 @@ source and license are documented in its source-file header.
 ## Fonts
 
 Inter and Nunito are bundled as `.woff2` files. Both use the SIL Open Font
-License 1.1 and permit redistribution. Sources:
+License 1.1 and permit redistribution. Their upstream copyright and license
+notices are included beside the font files as `Inter-OFL.txt` and
+`Nunito-OFL.txt`. Sources:
 [Inter](https://fonts.google.com/specimen/Inter) and
 [Nunito](https://fonts.google.com/specimen/Nunito).
 
