@@ -1,0 +1,4 @@
+[
+  { "id": "meadow-t1-pikachu", "theme": "meadow", "tier": 1, "target": 25, "math_hook": null },
+  { "id": "market-t3-charmander", "theme": "market", "tier": 3, "target": 4, "math_hook": { "skill": "add", "max": 8 } }
+]

@@ -1,0 +1,165 @@
+{
+  "id": "city-street-t1-eevee",
+  "theme": "city-street",
+  "difficulty": 1,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 133,
+    "x": 1600,
+    "y": 750,
+    "scale": 140,
+    "bbox": [
+      1530,
+      680,
+      140,
+      140
+    ],
+    "occlusion_pct": 0
+  },
+  "decoys": [
+    {
+      "species": 52,
+      "x": 1450,
+      "y": 760,
+      "scale": 130
+    },
+    {
+      "species": 58,
+      "x": 1750,
+      "y": 740,
+      "scale": 150,
+      "flip": true
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "prop:lamppost",
+      "type": "prop",
+      "x": 300,
+      "y": 760.0,
+      "z_layer": 1,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:tree-round",
+      "type": "prop",
+      "x": 150,
+      "y": 800,
+      "z_layer": 1,
+      "scale": 250
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 500,
+      "y": 850,
+      "z_layer": 1,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:fountain",
+      "type": "prop",
+      "x": 1200,
+      "y": 700,
+      "z_layer": 1,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:crate",
+      "type": "prop",
+      "x": 2800,
+      "y": 880,
+      "z_layer": 1,
+      "scale": 80
+    },
+    {
+      "asset_id": "prop:lamppost",
+      "type": "prop",
+      "x": 2900,
+      "y": 760.0,
+      "z_layer": 1,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:tree-round",
+      "type": "prop",
+      "x": 2900,
+      "y": 800,
+      "z_layer": 1,
+      "scale": 250
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 300,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 550,
+      "y": 750,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 800,
+      "y": 730,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "pokemon:35",
+      "type": "pokemon",
+      "x": 950,
+      "y": 760,
+      "z_layer": 2,
+      "scale": 110
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 1300,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:196",
+      "type": "pokemon",
+      "x": 1900,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 140,
+      "flip": true
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 2100,
+      "y": 710,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "pokemon:175",
+      "type": "pokemon",
+      "x": 2350,
+      "y": 790,
+      "z_layer": 2,
+      "scale": 100
+    }
+  ],
+  "hint_text": "Look near the fountain in the middle of the busy street!",
+  "density": {
+    "crowd": 11,
+    "total": 18
+  }
+}

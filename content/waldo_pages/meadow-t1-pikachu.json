@@ -1,0 +1,163 @@
+{
+  "id": "meadow-t1-pikachu",
+  "theme": "meadow",
+  "difficulty": 1,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 25,
+    "x": 1600,
+    "y": 650,
+    "scale": 150,
+    "bbox": [
+      1525,
+      575,
+      150,
+      150
+    ],
+    "occlusion_pct": 0
+  },
+  "decoys": [
+    {
+      "species": 172,
+      "x": 1450,
+      "y": 660,
+      "scale": 110
+    },
+    {
+      "species": 179,
+      "x": 1750,
+      "y": 640,
+      "scale": 130
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 300,
+      "y": 250,
+      "z_layer": 0,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:92",
+      "type": "pokemon",
+      "x": 600,
+      "y": 220,
+      "z_layer": 0,
+      "scale": 90
+    },
+    {
+      "asset_id": "pokemon:187",
+      "type": "pokemon",
+      "x": 2800,
+      "y": 240,
+      "z_layer": 0,
+      "scale": 95
+    },
+    {
+      "asset_id": "prop:tree-round",
+      "type": "prop",
+      "x": 200,
+      "y": 450,
+      "z_layer": 1,
+      "scale": 400
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 1100,
+      "y": 400,
+      "z_layer": 1,
+      "scale": 350
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 2600,
+      "y": 420,
+      "z_layer": 1,
+      "scale": 250
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 400,
+      "y": 620,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "pokemon:43",
+      "type": "pokemon",
+      "x": 650,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:152",
+      "type": "pokemon",
+      "x": 900,
+      "y": 640,
+      "z_layer": 2,
+      "scale": 110
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 1150,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 130
+    },
+    {
+      "asset_id": "pokemon:182",
+      "type": "pokemon",
+      "x": 1350,
+      "y": 660,
+      "z_layer": 2,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:175",
+      "type": "pokemon",
+      "x": 1850,
+      "y": 670,
+      "z_layer": 2,
+      "scale": 90
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 500,
+      "y": 850,
+      "z_layer": 3,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 2300,
+      "y": 880,
+      "z_layer": 3,
+      "scale": 120
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 3000,
+      "y": 820,
+      "z_layer": 3,
+      "scale": 180
+    }
+  ],
+  "hint_text": "Look for yellow ears among the big purple flower bed!",
+  "density": {
+    "crowd": 12,
+    "total": 18
+  }
+}

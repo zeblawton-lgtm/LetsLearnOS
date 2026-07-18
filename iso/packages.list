@@ -1,0 +1,51 @@
+# Ubuntu 24.04 packages installed in the live kiosk root filesystem.
+
+# Kernel, live boot, init, and firmware
+linux-image-generic
+live-boot
+systemd-sysv
+initramfs-tools
+linux-firmware
+firmware-sof-signed
+
+# Restricted X11 kiosk session (no desktop environment)
+xorg
+xserver-xorg-input-libinput
+lightdm
+matchbox-window-manager
+unclutter
+x11-xserver-utils
+dbus-x11
+iio-sensor-proxy
+
+# Chromium is snap-seeded by build-iso.sh; snapd consumes that seed at boot.
+snapd
+
+# Native better-sqlite3 build fallback. A checksummed Node 22 runtime is
+# installed under /opt/letslearnos/runtime by copy-assets.sh.
+python3
+make
+g++
+
+# Audio and hardware/network support
+pulseaudio
+alsa-utils
+network-manager
+wireless-tools
+wpasupplicant
+
+# Fonts
+fonts-noto
+fonts-noto-color-emoji
+fonts-liberation
+
+# Runtime/build utilities
+ca-certificates
+curl
+iproute2
+psmisc
+rsync
+sqlite3
+
+# Policy enforcement
+polkitd

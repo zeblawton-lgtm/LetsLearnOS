@@ -1,0 +1,59 @@
+# letslearnos.service — LetsLearnOS systemd USER unit
+#
+# DESIGN: user unit (not system unit) — identical rationale to v2.
+#
+# A user unit launched from the graphical-session target inherits
+# WAYLAND_DISPLAY / DISPLAY / DBUS_SESSION_BUS_ADDRESS / XDG_RUNTIME_DIR /
+# PULSE_SERVER etc automatically via PAM/systemd user manager. A system unit
+# would require manually propagating every env var the graphical stack exposes,
+# which is fragile across kernel/compositor updates.
+#
+# loginctl enable-linger kids keeps the user manager alive across reboots
+# without requiring an interactive login. gdm3 autologin triggers the
+# graphical-session.target so this unit starts on boot.
+#
+# Install location (set by install.sh):
+#   /home/kids/.config/systemd/user/letslearnos.service
+#
+# Enable:
+#   sudo -u kids XDG_RUNTIME_DIR=/run/user/$(id -u kids) \
+#     systemctl --user enable letslearnos.service
+#
+# Logs:
+#   journalctl --user -u letslearnos -f         (as the kids user)
+#   journalctl _UID=$(id -u kids) -f            (as root/parent)
+
+[Unit]
+Description=LetsLearnOS kiosk — Node.js/Express backend + Chromium kiosk
+After=graphical-session.target network.target
+PartOf=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/opt/letslearnos/system/kiosk-launcher.sh
+
+# Restart after crashes and clean browser exits. The kids account has no
+# desktop or relaunch icon, so the kiosk must always be the active session.
+Restart=always
+RestartSec=3
+
+TimeoutStartSec=30
+
+# Kill entire cgroup on stop so no orphan Node processes linger.
+KillMode=control-group
+KillSignal=SIGTERM
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=letslearnos
+
+# Environment — common values; secrets live in /opt/letslearnos/.env loaded
+# by kiosk-launcher.sh at runtime (not here, to avoid journald exposure).
+Environment=NODE_ENV=production
+Environment=PORT=8765
+Environment=APP_ENV=kiosk
+Environment=LETSLEARNOS_INSTALL=/opt/letslearnos
+
+[Install]
+WantedBy=graphical-session.target

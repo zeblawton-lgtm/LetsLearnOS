@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "waldo_page.schema.json",
+  "title": "WaldoPage",
+  "description": "One Hidden Search page: entity manifest rendered deterministically from bundled assets. Workers generate DATA only. Canvas is fixed 3200x1000 logical px; x/y are entity centers; interactive entities keep y >= 180 (top-strip exclusion).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "theme", "difficulty", "canvas", "target", "decoys", "entities", "hint_text"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,40}$",
+      "description": "Unique kebab-case page id, e.g. 'harbor-t2-squirtle'"
+    },
+    "theme": {
+      "type": "string",
+      "enum": ["city-street", "festival", "market", "beach", "forest", "gym", "harbor", "train-station", "snowfield", "meadow"]
+    },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["w", "h"],
+      "properties": {
+        "w": { "const": 3200 },
+        "h": { "const": 1000 }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["species", "x", "y", "scale", "bbox", "occlusion_pct"],
+      "properties": {
+        "species": { "$ref": "#/definitions/bundledSpeciesId" },
+        "x": { "type": "number", "minimum": 40, "maximum": 3160 },
+        "y": { "type": "number", "minimum": 180, "maximum": 960 },
+        "scale": {
+          "type": "number",
+          "minimum": 80,
+          "maximum": 300,
+          "description": "Rendered artwork width in logical px (artwork is square, so height == width). Tier minimums: T1>=140 T2>=120 T3>=100 T4>=90 T5>=80."
+        },
+        "bbox": { "$ref": "#/definitions/bbox" },
+        "occlusion_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30,
+          "description": "Percent of target bbox covered by entities with z_layer 3-4 (target and decoys implicitly render at z_layer 2). Validator recomputes; tier budgets: T1-2=0, T3<=15, T4<=25, T5<=30."
+        }
+      }
+    },
+    "decoys": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "description": "Look-alike species placed within 600 logical px of the target, drawn from the lead-authored similarity table. Never the target species.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["species", "x", "y", "scale"],
+        "properties": {
+          "species": { "$ref": "#/definitions/bundledSpeciesId" },
+          "x": { "type": "number", "minimum": 40, "maximum": 3160 },
+          "y": { "type": "number", "minimum": 180, "maximum": 960 },
+          "scale": { "type": "number", "minimum": 80, "maximum": 300 },
+          "flip": { "type": "boolean" }
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 48,
+      "description": "Everything else rendered on the page (crowd Pokemon, NPCs, props). Render list = entities + decoys + target.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["asset_id", "type", "x", "y", "z_layer", "scale"],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "pattern": "^(pokemon:[0-9]{1,4}|npc:[a-z][a-z-]{1,24}|prop:[a-z][a-z-]{1,24})$",
+            "description": "pokemon:<bundled id> | npc:<registry name> | prop:<registry name>. Validator cross-checks against the allow-list and the prop/NPC registry."
+          },
+          "type": { "type": "string", "enum": ["pokemon", "npc", "prop"] },
+          "x": { "type": "number", "minimum": 0, "maximum": 3200 },
+          "y": { "type": "number", "minimum": 0, "maximum": 1000 },
+          "z_layer": { "type": "integer", "minimum": 0, "maximum": 4 },
+          "scale": { "type": "number", "minimum": 60, "maximum": 700 },
+          "flip": { "type": "boolean" }
+        }
+      }
+    },
+    "density": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Worker's self-reported counts; validator recomputes and must agree.",
+      "properties": {
+        "crowd": { "type": "integer", "minimum": 8, "maximum": 48, "description": "pokemon + npc count incl. decoys and target" },
+        "total": { "type": "integer", "minimum": 14, "maximum": 55, "description": "all renderables incl. props" }
+      }
+    },
+    "hint_text": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 90,
+      "description": "Kid-friendly location clue, positive tone, spoken by TTS. E.g. 'Look near the boats by the pier!'"
+    },
+    "math_hook": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skill", "max"],
+      "description": "OPTIONAL (tiers 3-5). Template PARAMETERS only — the app instantiates the actual question from the existing math template engine. Workers never write question text.",
+      "properties": {
+        "skill": { "type": "string", "enum": ["count", "add", "subtract", "multiply"] },
+        "max": { "type": "integer", "minimum": 3, "maximum": 12, "description": "Largest operand/answer magnitude for the template." }
+      }
+    }
+  },
+  "definitions": {
+    "bbox": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "number" },
+      "description": "[x, y, w, h] top-left corner + size, logical px. Must equal [cx - scale/2, cy - scale/2, scale, scale] for square artwork (validator recomputes)."
+    },
+    "bundledSpeciesId": {
+      "type": "integer",
+      "description": "Pokedex id with bundled official-artwork (public/sprites/manifest.json spriteIds).",
+      "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 19, 25, 26, 35, 37, 39, 40, 43, 52, 53, 54, 55, 58, 60, 69, 74, 77, 79, 87, 90, 92, 94, 98, 113, 116, 120, 128, 129, 130, 131, 132, 133, 143, 145, 147, 148, 149, 150, 151, 152, 172, 173, 174, 175, 179, 182, 183, 187, 189, 191, 192, 196, 197, 216, 222, 241, 320, 366, 448, 778, 882]
+    }
+  }
+}

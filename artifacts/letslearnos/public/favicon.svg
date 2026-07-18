@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="LetsLearnOS open book">
+  <rect width="180" height="180" rx="36" fill="#2563eb"/>
+  <path d="M30 49c22-8 42-3 60 10v76c-18-13-38-18-60-10V49Z" fill="#fff"/>
+  <path d="M150 49c-22-8-42-3-60 10v76c18-13 38-18 60-10V49Z" fill="#dbeafe"/>
+  <path d="M90 59v76" stroke="#1e3a8a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M47 72h27M47 89h27M106 72h27M106 89h27" stroke="#60a5fa" stroke-width="6" stroke-linecap="round"/>
+</svg>

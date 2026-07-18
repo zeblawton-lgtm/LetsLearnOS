@@ -1,0 +1,14 @@
+{
+  "name": "LetsLearnOS",
+  "short_name": "LetsLearn",
+  "description": "An offline-first learning kiosk for young children.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#fde047",
+  "theme_color": "#ef4444",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

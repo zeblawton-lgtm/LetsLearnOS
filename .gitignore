@@ -1,0 +1,68 @@
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# compiled output
+dist
+tmp
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Local tool caches
+.cache/
+.local/
+
+# Secrets / local env (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Local SQLite databases
+*.sqlite
+*.sqlite-*
+*.db
+
+# stray bundle
+*.bundle
+
+# Optional local asset packs are ignored by default to prevent accidental
+# publication of restricted character art or commercial music. A maintainer may
+# force-add only files whose redistribution terms are compatible with MIT.
+/artifacts/letslearnos/public/sprites/official-artwork/*.png
+/artifacts/letslearnos/public/audio/*.mp3
+
+__pycache__/

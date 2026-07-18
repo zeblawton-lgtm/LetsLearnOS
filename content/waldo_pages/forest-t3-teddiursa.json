@@ -1,0 +1,258 @@
+{
+  "id": "forest-t3-teddiursa",
+  "theme": "forest",
+  "difficulty": 3,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 216,
+    "x": 1650,
+    "y": 720,
+    "scale": 110,
+    "bbox": [
+      1595,
+      665,
+      110,
+      110
+    ],
+    "occlusion_pct": 0.0
+  },
+  "decoys": [
+    {
+      "species": 133,
+      "x": 1480,
+      "y": 740,
+      "scale": 100,
+      "flip": true
+    },
+    {
+      "species": 19,
+      "x": 1780,
+      "y": 710,
+      "scale": 90
+    },
+    {
+      "species": 37,
+      "x": 1590,
+      "y": 690,
+      "scale": 95,
+      "flip": true
+    },
+    {
+      "species": 58,
+      "x": 1720,
+      "y": 760,
+      "scale": 110
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "prop:tree-pine",
+      "type": "prop",
+      "x": 300,
+      "y": 450,
+      "z_layer": 0,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:tree-round",
+      "type": "prop",
+      "x": 2800,
+      "y": 400,
+      "z_layer": 0,
+      "scale": 220
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 800,
+      "y": 850,
+      "z_layer": 1,
+      "scale": 180
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 2200,
+      "y": 880,
+      "z_layer": 1,
+      "scale": 160
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 1200,
+      "y": 920,
+      "z_layer": 1,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:43",
+      "type": "pokemon",
+      "x": 150,
+      "y": 600,
+      "z_layer": 1,
+      "scale": 90
+    },
+    {
+      "asset_id": "pokemon:10",
+      "type": "pokemon",
+      "x": 400,
+      "y": 550,
+      "z_layer": 1,
+      "scale": 80
+    },
+    {
+      "asset_id": "pokemon:172",
+      "type": "pokemon",
+      "x": 650,
+      "y": 650,
+      "z_layer": 1,
+      "scale": 70
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 250,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-b",
+      "type": "npc",
+      "x": 450,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 130
+    },
+    {
+      "asset_id": "pokemon:174",
+      "type": "pokemon",
+      "x": 320,
+      "y": 820,
+      "z_layer": 2,
+      "scale": 75,
+      "flip": true
+    },
+    {
+      "asset_id": "pokemon:191",
+      "type": "pokemon",
+      "x": 550,
+      "y": 800,
+      "z_layer": 2,
+      "scale": 60
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 1100,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 1350,
+      "y": 750,
+      "z_layer": 2,
+      "scale": 135
+    },
+    {
+      "asset_id": "npc:villager-d",
+      "type": "npc",
+      "x": 1950,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 145
+    },
+    {
+      "asset_id": "pokemon:12",
+      "type": "pokemon",
+      "x": 2100,
+      "y": 300,
+      "z_layer": 2,
+      "scale": 100
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 2400,
+      "y": 740,
+      "z_layer": 2,
+      "scale": 155
+    },
+    {
+      "asset_id": "pokemon:74",
+      "type": "pokemon",
+      "x": 2600,
+      "y": 810,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 1580,
+      "y": 820,
+      "z_layer": 3,
+      "scale": 140
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 1720,
+      "y": 840,
+      "z_layer": 3,
+      "scale": 90
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 1600,
+      "y": 880,
+      "z_layer": 3,
+      "scale": 100
+    },
+    {
+      "asset_id": "npc:villager-f",
+      "type": "npc",
+      "x": 1400,
+      "y": 860,
+      "z_layer": 3,
+      "scale": 125
+    },
+    {
+      "asset_id": "pokemon:175",
+      "type": "pokemon",
+      "x": 1250,
+      "y": 880,
+      "z_layer": 3,
+      "scale": 80
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 2300,
+      "y": 900,
+      "z_layer": 4,
+      "scale": 130
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 500,
+      "y": 930,
+      "z_layer": 4,
+      "scale": 110
+    }
+  ],
+  "hint_text": "Look near the bushes in the middle of the forest path!",
+  "math_hook": {
+    "skill": "subtract",
+    "max": 6
+  }
+}

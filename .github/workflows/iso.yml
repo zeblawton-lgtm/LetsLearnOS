@@ -1,0 +1,79 @@
+name: Build kiosk ISO
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "iso/**"
+      - "system/**"
+      - "scripts/verify-assets.py"
+      - "artifacts/api-server/**"
+      - "artifacts/letslearnos/**"
+      - "lib/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/iso.yml"
+
+jobs:
+  build:
+    name: Ubuntu 24.04 hybrid image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install application dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify release content
+        run: |
+          scripts/audit-public-release.sh
+          python3 scripts/waldo-pack.py --check
+          python3 scripts/verify-assets.py --repository
+          node -e "const fs=require('node:fs');const wanted=JSON.parse(fs.readFileSync('iso/runtime-package.json','utf8')).dependencies['better-sqlite3'];const installed=require('./artifacts/api-server/node_modules/better-sqlite3/package.json').version;if(wanted!==installed){throw new Error('ISO better-sqlite3 '+wanted+' != workspace '+installed)}"
+
+      - name: Build application
+        run: |
+          pnpm --filter @workspace/letslearnos build
+          pnpm --filter @workspace/api-server build
+
+      - name: Install ISO build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            debootstrap dosfstools e2fsprogs grub-efi-amd64-bin grub-pc-bin \
+            mtools snapd squashfs-tools xorriso xz-utils
+
+      - name: Build ISO
+        run: sudo bash iso/build-iso.sh
+
+      - name: Verify ISO contents
+        run: |
+          (cd dist && sha256sum --check checksums.txt)
+          xorriso -indev dist/letslearnos.iso \
+            -report_el_torito plain -report_system_area plain
+
+      - name: Upload ISO and checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: letslearnos-iso
+          path: |
+            dist/letslearnos.iso
+            dist/checksums.txt
+          compression-level: 0
+          if-no-files-found: error

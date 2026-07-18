@@ -1,0 +1,349 @@
+{
+  "id": "festival-t5-gastly",
+  "theme": "festival",
+  "difficulty": 5,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 92,
+    "x": 1650,
+    "y": 780,
+    "scale": 110,
+    "bbox": [
+      1595,
+      725,
+      110,
+      110
+    ],
+    "occlusion_pct": 0.0
+  },
+  "decoys": [
+    {
+      "species": 94,
+      "x": 1520,
+      "y": 790,
+      "scale": 130
+    },
+    {
+      "species": 197,
+      "x": 1450,
+      "y": 810,
+      "scale": 120
+    },
+    {
+      "species": 132,
+      "x": 1820,
+      "y": 800,
+      "scale": 100
+    },
+    {
+      "species": 197,
+      "x": 1600,
+      "y": 840,
+      "scale": 115
+    },
+    {
+      "species": 94,
+      "x": 1700,
+      "y": 850,
+      "scale": 125
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "prop:ferris-wheel",
+      "type": "prop",
+      "x": 1600,
+      "y": 350,
+      "z_layer": 0,
+      "scale": 700
+    },
+    {
+      "asset_id": "prop:lamppost",
+      "type": "prop",
+      "x": 200,
+      "y": 400,
+      "z_layer": 0,
+      "scale": 280
+    },
+    {
+      "asset_id": "prop:lamppost",
+      "type": "prop",
+      "x": 3000,
+      "y": 400,
+      "z_layer": 0,
+      "scale": 280
+    },
+    {
+      "asset_id": "prop:tent",
+      "type": "prop",
+      "x": 400,
+      "y": 520,
+      "z_layer": 1,
+      "scale": 350
+    },
+    {
+      "asset_id": "prop:stall-red",
+      "type": "prop",
+      "x": 800,
+      "y": 530,
+      "z_layer": 1,
+      "scale": 220
+    },
+    {
+      "asset_id": "prop:stall-blue",
+      "type": "prop",
+      "x": 1200,
+      "y": 540,
+      "z_layer": 1,
+      "scale": 220
+    },
+    {
+      "asset_id": "prop:stall-red",
+      "type": "prop",
+      "x": 2200,
+      "y": 530,
+      "z_layer": 1,
+      "scale": 220
+    },
+    {
+      "asset_id": "prop:balloon-cluster",
+      "type": "prop",
+      "x": 2600,
+      "y": 500,
+      "z_layer": 1,
+      "scale": 180
+    },
+    {
+      "asset_id": "prop:balloon-cluster",
+      "type": "prop",
+      "x": 1100,
+      "y": 490,
+      "z_layer": 1,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:12",
+      "type": "pokemon",
+      "x": 500,
+      "y": 220,
+      "z_layer": 0,
+      "scale": 140
+    },
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 2400,
+      "y": 240,
+      "z_layer": 0,
+      "scale": 130
+    },
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 1000,
+      "y": 210,
+      "z_layer": 0,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 300,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 380,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:58",
+      "type": "pokemon",
+      "x": 650,
+      "y": 690,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 750,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 170
+    },
+    {
+      "asset_id": "pokemon:39",
+      "type": "pokemon",
+      "x": 950,
+      "y": 710,
+      "z_layer": 2,
+      "scale": 130
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 1080,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:35",
+      "type": "pokemon",
+      "x": 1250,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 1380,
+      "y": 710,
+      "z_layer": 2,
+      "scale": 165
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 2100,
+      "y": 690,
+      "z_layer": 2,
+      "scale": 170
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 2300,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 135
+    },
+    {
+      "asset_id": "npc:villager-e",
+      "type": "npc",
+      "x": 2450,
+      "y": 710,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:133",
+      "type": "pokemon",
+      "x": 2600,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:fisher",
+      "type": "npc",
+      "x": 2800,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 165
+    },
+    {
+      "asset_id": "pokemon:175",
+      "type": "pokemon",
+      "x": 2900,
+      "y": 730,
+      "z_layer": 2,
+      "scale": 100
+    },
+    {
+      "asset_id": "npc:villager-f",
+      "type": "npc",
+      "x": 550,
+      "y": 850,
+      "z_layer": 3,
+      "scale": 155
+    },
+    {
+      "asset_id": "pokemon:19",
+      "type": "pokemon",
+      "x": 700,
+      "y": 860,
+      "z_layer": 3,
+      "scale": 110
+    },
+    {
+      "asset_id": "npc:conductor",
+      "type": "npc",
+      "x": 900,
+      "y": 870,
+      "z_layer": 3,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:173",
+      "type": "pokemon",
+      "x": 1100,
+      "y": 880,
+      "z_layer": 3,
+      "scale": 90
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 1300,
+      "y": 875,
+      "z_layer": 3,
+      "scale": 155
+    },
+    {
+      "asset_id": "npc:villager-b",
+      "type": "npc",
+      "x": 1800,
+      "y": 883.75,
+      "z_layer": 3,
+      "scale": 155
+    },
+    {
+      "asset_id": "pokemon:172",
+      "type": "pokemon",
+      "x": 2000,
+      "y": 875,
+      "z_layer": 3,
+      "scale": 90
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 2200,
+      "y": 865,
+      "z_layer": 3,
+      "scale": 170
+    },
+    {
+      "asset_id": "pokemon:174",
+      "type": "pokemon",
+      "x": 2400,
+      "y": 875,
+      "z_layer": 3,
+      "scale": 95
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 2650,
+      "y": 865,
+      "z_layer": 3,
+      "scale": 160
+    }
+  ],
+  "hint_text": "Look near the blue balloon cluster in the middle of the crowd!",
+  "math_hook": {
+    "skill": "multiply",
+    "max": 8
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "id": "beach-t4-psyduck",
+  "theme": "beach",
+  "difficulty": 4,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 54,
+    "x": 1650,
+    "y": 810,
+    "scale": 110,
+    "bbox": [
+      1595,
+      755,
+      110,
+      110
+    ],
+    "occlusion_pct": 0.0
+  },
+  "decoys": [
+    {
+      "species": 79,
+      "x": 1746.721359549996,
+      "y": 820,
+      "scale": 140
+    },
+    {
+      "species": 60,
+      "x": 1600,
+      "y": 790,
+      "scale": 95
+    },
+    {
+      "species": 60,
+      "x": 1700,
+      "y": 780,
+      "scale": 100
+    },
+    {
+      "species": 79,
+      "x": 1520,
+      "y": 840,
+      "scale": 120
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 200,
+      "y": 200,
+      "z_layer": 0,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:12",
+      "type": "pokemon",
+      "x": 2900,
+      "y": 220,
+      "z_layer": 0,
+      "scale": 110
+    },
+    {
+      "asset_id": "pokemon:92",
+      "type": "pokemon",
+      "x": 1400,
+      "y": 190,
+      "z_layer": 0,
+      "scale": 90
+    },
+    {
+      "asset_id": "prop:boat-small",
+      "type": "prop",
+      "x": 400,
+      "y": 450,
+      "z_layer": 1,
+      "scale": 250
+    },
+    {
+      "asset_id": "prop:boat-small",
+      "type": "prop",
+      "x": 2800,
+      "y": 440,
+      "z_layer": 1,
+      "scale": 230
+    },
+    {
+      "asset_id": "pokemon:129",
+      "type": "pokemon",
+      "x": 600,
+      "y": 480,
+      "z_layer": 1,
+      "scale": 140
+    },
+    {
+      "asset_id": "pokemon:131",
+      "type": "pokemon",
+      "x": 1200,
+      "y": 490,
+      "z_layer": 1,
+      "scale": 200
+    },
+    {
+      "asset_id": "pokemon:87",
+      "type": "pokemon",
+      "x": 2400,
+      "y": 470,
+      "z_layer": 1,
+      "scale": 180
+    },
+    {
+      "asset_id": "npc:fisher",
+      "type": "npc",
+      "x": 300,
+      "y": 650,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 500,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 700,
+      "y": 660,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-b",
+      "type": "npc",
+      "x": 900,
+      "y": 690,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 1100,
+      "y": 670,
+      "z_layer": 2,
+      "scale": 135
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 1300,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:35",
+      "type": "pokemon",
+      "x": 1550,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 110
+    },
+    {
+      "asset_id": "pokemon:39",
+      "type": "pokemon",
+      "x": 1800,
+      "y": 710,
+      "z_layer": 2,
+      "scale": 115
+    },
+    {
+      "asset_id": "pokemon:52",
+      "type": "pokemon",
+      "x": 2000,
+      "y": 730,
+      "z_layer": 2,
+      "scale": 125
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 2200,
+      "y": 690,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "npc:villager-d",
+      "type": "npc",
+      "x": 2500,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 145
+    },
+    {
+      "asset_id": "npc:villager-e",
+      "type": "npc",
+      "x": 2700,
+      "y": 660,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "prop:umbrella",
+      "type": "prop",
+      "x": 1503.0,
+      "y": 800,
+      "z_layer": 4,
+      "scale": 180
+    },
+    {
+      "asset_id": "prop:sandcastle",
+      "type": "prop",
+      "x": 1752.0,
+      "y": 850,
+      "z_layer": 4,
+      "scale": 90
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 1000,
+      "y": 780,
+      "z_layer": 3,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 2300,
+      "y": 760,
+      "z_layer": 3,
+      "scale": 210
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 450,
+      "y": 820,
+      "z_layer": 3,
+      "scale": 80
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 2950,
+      "y": 810,
+      "z_layer": 3,
+      "scale": 85
+    },
+    {
+      "asset_id": "prop:umbrella",
+      "type": "prop",
+      "x": 650,
+      "y": 750,
+      "z_layer": 3,
+      "scale": 160
+    },
+    {
+      "asset_id": "prop:umbrella",
+      "type": "prop",
+      "x": 2550,
+      "y": 740,
+      "z_layer": 3,
+      "scale": 165
+    },
+    {
+      "asset_id": "pokemon:133",
+      "type": "pokemon",
+      "x": 850,
+      "y": 800,
+      "z_layer": 2,
+      "scale": 130
+    },
+    {
+      "asset_id": "pokemon:175",
+      "type": "pokemon",
+      "x": 1450,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:58",
+      "type": "pokemon",
+      "x": 1900,
+      "y": 790,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:143",
+      "type": "pokemon",
+      "x": 2600,
+      "y": 810,
+      "z_layer": 2,
+      "scale": 220
+    }
+  ],
+  "hint_text": "Look for the yellow duck under the big red umbrella!",
+  "math_hook": {
+    "skill": "add",
+    "max": 10
+  }
+}

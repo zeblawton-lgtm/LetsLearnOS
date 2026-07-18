@@ -1,0 +1,158 @@
+{
+  "id": "forest-t1-bulbasaur",
+  "theme": "forest",
+  "difficulty": 1,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 1,
+    "x": 1600,
+    "y": 750,
+    "scale": 160,
+    "bbox": [
+      1520,
+      670,
+      160,
+      160
+    ],
+    "occlusion_pct": 0
+  },
+  "decoys": [
+    {
+      "species": 43,
+      "x": 1450,
+      "y": 780,
+      "scale": 130
+    },
+    {
+      "species": 152,
+      "x": 1720,
+      "y": 720,
+      "scale": 140,
+      "flip": true
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "prop:tree-round",
+      "type": "prop",
+      "x": 200,
+      "y": 400,
+      "z_layer": 0,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:tree-pine",
+      "type": "prop",
+      "x": 3000,
+      "y": 350,
+      "z_layer": 0,
+      "scale": 350
+    },
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 300,
+      "y": 200,
+      "z_layer": 0,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:12",
+      "type": "pokemon",
+      "x": 2800,
+      "y": 220,
+      "z_layer": 0,
+      "scale": 110,
+      "flip": true
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 600,
+      "y": 550,
+      "z_layer": 1,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 2400,
+      "y": 580,
+      "z_layer": 1,
+      "scale": 220
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 1100,
+      "y": 600,
+      "z_layer": 1,
+      "scale": 180
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 2700,
+      "y": 620,
+      "z_layer": 1,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 400,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 500,
+      "y": 750,
+      "z_layer": 2,
+      "scale": 130,
+      "flip": true
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 900,
+      "y": 740,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 2200,
+      "y": 730,
+      "z_layer": 2,
+      "scale": 170
+    },
+    {
+      "asset_id": "prop:bush",
+      "type": "prop",
+      "x": 1300,
+      "y": 850,
+      "z_layer": 3,
+      "scale": 190
+    },
+    {
+      "asset_id": "prop:flowerbed",
+      "type": "prop",
+      "x": 1850,
+      "y": 840,
+      "z_layer": 3,
+      "scale": 210
+    }
+  ],
+  "hint_text": "Find the green dino hiding near the flowerbeds in the middle!",
+  "density": {
+    "crowd": 9,
+    "total": 17
+  }
+}

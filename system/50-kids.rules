@@ -1,0 +1,83 @@
+/*
+ * /etc/polkit-1/rules.d/50-kids.rules
+ *
+ * Polkit deny rules for the LetsLearnOS kiosk user "kids".
+ *
+ * Ported verbatim from LetsLearnOS v2.
+ *
+ * Format note — Ubuntu 24.04 / 26.04 / polkit 12x:
+ *   JavaScript .rules files ARE the current supported polkit rule format.
+ *   The legacy .pkla (pklocalauthority) format was REMOVED from modern polkit.
+ *   A .pkla fallback is intentionally NOT provided.
+ *
+ *   Belt-and-suspenders for the most safety-critical denials (suspend/shutdown)
+ *   is provided at the systemd level, independent of polkit:
+ *     - sleep/suspend/hibernate/hybrid-sleep targets are masked system-wide
+ *       (system/kiosk-lockdown.sh Step 11)
+ *     - /etc/systemd/logind.conf.d/50-letslearnos.conf makes physical power/lid
+ *       keys inert (system/kiosk-lockdown.sh Step 12)
+ *   These hold even if this .rules file is somehow not evaluated.
+ *
+ * Policy:
+ *   The kids user is denied all power management actions (shutdown, reboot,
+ *   suspend, hibernate), all systemd unit management actions, all package
+ *   management actions, all NetworkManager configuration changes, and all
+ *   device pairing actions.
+ *
+ * What this does NOT block:
+ *   - The kids user's own systemd --user units (letslearnos.service). Those
+ *     are managed by the user's own systemd manager, not polkit.
+ *
+ * How to test (run as root or parent user on the 7306):
+ *   pkcheck --action-id org.freedesktop.login1.power-off \
+ *           --process $(pgrep -u kids chromium | head -1) \
+ *           --allow-user-interaction
+ *   Expected: "Not authorized" or exit code 1.
+ */
+
+polkit.addRule(function(action, subject) {
+    if (subject.user !== "kids") {
+        return polkit.Result.NOT_HANDLED;
+    }
+
+    // ---- Power management (login1) ----
+    if (action.id.indexOf("org.freedesktop.login1.") === 0) {
+        polkit.log("kids: blocked login1 action: " + action.id);
+        return polkit.Result.NO;
+    }
+
+    // ---- systemd system-wide unit management ----
+    if (action.id.indexOf("org.freedesktop.systemd1.") === 0) {
+        polkit.log("kids: blocked systemd1 action: " + action.id);
+        return polkit.Result.NO;
+    }
+
+    // ---- Package management (PackageKit / APT / Snap) ----
+    if (action.id.indexOf("org.debian.apt.") === 0 ||
+        action.id.indexOf("com.ubuntu.pkexec.") === 0 ||
+        action.id.indexOf("io.snapcraft.") === 0 ||
+        action.id.indexOf("org.freedesktop.packagekit.") === 0) {
+        polkit.log("kids: blocked package-mgmt action: " + action.id);
+        return polkit.Result.NO;
+    }
+
+    // ---- NetworkManager configuration ----
+    if (action.id.indexOf("org.freedesktop.NetworkManager.") === 0) {
+        polkit.log("kids: blocked NetworkManager action: " + action.id);
+        return polkit.Result.NO;
+    }
+
+    // ---- Bluetooth / device pairing ----
+    if (action.id.indexOf("org.bluez.") === 0) {
+        polkit.log("kids: blocked bluez action: " + action.id);
+        return polkit.Result.NO;
+    }
+
+    // ---- GDM user switching / guest sessions ----
+    if (action.id.indexOf("org.gnome.DisplayManager.") === 0) {
+        polkit.log("kids: blocked GDM action: " + action.id);
+        return polkit.Result.NO;
+    }
+
+    return polkit.Result.NOT_HANDLED;
+});

@@ -1,0 +1,210 @@
+{
+  "id": "train-station-t2-growlithe",
+  "theme": "train-station",
+  "difficulty": 2,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 58,
+    "x": 1620,
+    "y": 840,
+    "scale": 130,
+    "bbox": [
+      1555,
+      775,
+      130,
+      130
+    ],
+    "occlusion_pct": 0
+  },
+  "decoys": [
+    {
+      "species": 37,
+      "x": 1450,
+      "y": 830,
+      "scale": 110
+    },
+    {
+      "species": 133,
+      "x": 1780,
+      "y": 850,
+      "scale": 120,
+      "flip": true
+    },
+    {
+      "species": 4,
+      "x": 1550,
+      "y": 790,
+      "scale": 100
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "prop:train-car",
+      "type": "prop",
+      "x": 400,
+      "y": 550,
+      "z_layer": 1,
+      "scale": 650
+    },
+    {
+      "asset_id": "prop:train-car",
+      "type": "prop",
+      "x": 1600,
+      "y": 550,
+      "z_layer": 1,
+      "scale": 650
+    },
+    {
+      "asset_id": "prop:station-clock",
+      "type": "prop",
+      "x": 2600,
+      "y": 350,
+      "z_layer": 0,
+      "scale": 180
+    },
+    {
+      "asset_id": "prop:lamppost",
+      "type": "prop",
+      "x": 250,
+      "y": 500,
+      "z_layer": 1,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:lamppost",
+      "type": "prop",
+      "x": 2950,
+      "y": 500,
+      "z_layer": 1,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 800,
+      "y": 880,
+      "z_layer": 3,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 2400,
+      "y": 890,
+      "z_layer": 3,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:crate",
+      "type": "prop",
+      "x": 1100,
+      "y": 860,
+      "z_layer": 3,
+      "scale": 90
+    },
+    {
+      "asset_id": "prop:crate",
+      "type": "prop",
+      "x": 2100,
+      "y": 850,
+      "z_layer": 3,
+      "scale": 90
+    },
+    {
+      "asset_id": "npc:conductor",
+      "type": "npc",
+      "x": 300,
+      "y": 820,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 1350,
+      "y": 810,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 2800,
+      "y": 830,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 600,
+      "y": 840,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-b",
+      "type": "npc",
+      "x": 900,
+      "y": 850,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 2200,
+      "y": 840,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-d",
+      "type": "npc",
+      "x": 2500,
+      "y": 850,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 500,
+      "y": 790,
+      "z_layer": 2,
+      "scale": 110
+    },
+    {
+      "asset_id": "pokemon:39",
+      "type": "pokemon",
+      "x": 750,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 150,
+      "y": 250,
+      "z_layer": 0,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:12",
+      "type": "pokemon",
+      "x": 2950,
+      "y": 240,
+      "z_layer": 0,
+      "scale": 110
+    }
+  ],
+  "hint_text": "Look near the red train cars and the benches!",
+  "density": {
+    "crowd": 15,
+    "total": 24
+  }
+}

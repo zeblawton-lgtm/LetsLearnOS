@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Content, typecheck, tests, build, syntax
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check generated Hidden Search content
+        run: python3 scripts/waldo-pack.py --check
+
+      - name: Audit public release boundary
+        run: scripts/audit-public-release.sh
+
+      - name: Check bundled offline assets
+        run: python3 scripts/verify-assets.py --repository
+
+      - name: Check ISO native runtime pin
+        run: |
+          node -e "const fs=require('node:fs');const wanted=JSON.parse(fs.readFileSync('iso/runtime-package.json','utf8')).dependencies['better-sqlite3'];const installed=require('./artifacts/api-server/node_modules/better-sqlite3/package.json').version;if(wanted!==installed){throw new Error('ISO better-sqlite3 '+wanted+' != workspace '+installed)}"
+
+      - name: Typecheck workspace
+        run: pnpm run typecheck
+
+      - name: Run API tests
+        run: pnpm --filter @workspace/api-server test
+
+      - name: Build frontend
+        run: pnpm --filter @workspace/letslearnos build
+
+      - name: Build backend
+        run: pnpm --filter @workspace/api-server build
+
+      - name: Check shell script syntax
+        run: find scripts system iso -type f -name '*.sh' -print0 | xargs -0 -r bash -n
+
+      - name: Check Python script syntax
+        run: python3 -m py_compile scripts/*.py

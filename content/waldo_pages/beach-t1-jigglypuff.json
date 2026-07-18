@@ -1,0 +1,164 @@
+{
+  "id": "beach-t1-jigglypuff",
+  "theme": "beach",
+  "difficulty": 1,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 39,
+    "x": 1600,
+    "y": 750,
+    "scale": 150,
+    "bbox": [
+      1525,
+      675,
+      150,
+      150
+    ],
+    "occlusion_pct": 0
+  },
+  "decoys": [
+    {
+      "species": 40,
+      "x": 1450,
+      "y": 740,
+      "scale": 130
+    },
+    {
+      "species": 173,
+      "x": 1720,
+      "y": 760,
+      "scale": 90
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "pokemon:16",
+      "type": "pokemon",
+      "x": 400,
+      "y": 250,
+      "z_layer": 0,
+      "scale": 100
+    },
+    {
+      "asset_id": "pokemon:12",
+      "type": "pokemon",
+      "x": 2900,
+      "y": 280,
+      "z_layer": 0,
+      "scale": 110
+    },
+    {
+      "asset_id": "prop:umbrella",
+      "type": "prop",
+      "x": 600,
+      "y": 400,
+      "z_layer": 1,
+      "scale": 250
+    },
+    {
+      "asset_id": "prop:boat-small",
+      "type": "prop",
+      "x": 2400,
+      "y": 420,
+      "z_layer": 1,
+      "scale": 300
+    },
+    {
+      "asset_id": "pokemon:54",
+      "type": "pokemon",
+      "x": 450,
+      "y": 480,
+      "z_layer": 1,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:60",
+      "type": "pokemon",
+      "x": 800,
+      "y": 460,
+      "z_layer": 1,
+      "scale": 110
+    },
+    {
+      "asset_id": "pokemon:90",
+      "type": "pokemon",
+      "x": 2600,
+      "y": 440,
+      "z_layer": 1,
+      "scale": 90
+    },
+    {
+      "asset_id": "pokemon:98",
+      "type": "pokemon",
+      "x": 1100,
+      "y": 490,
+      "z_layer": 1,
+      "scale": 100
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 300,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 700,
+      "y": 800,
+      "z_layer": 2,
+      "scale": 130,
+      "flip": true
+    },
+    {
+      "asset_id": "pokemon:26",
+      "type": "pokemon",
+      "x": 1200,
+      "y": 820,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:fisher",
+      "type": "npc",
+      "x": 2800,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "prop:sandcastle",
+      "type": "prop",
+      "x": 1350,
+      "y": 900,
+      "z_layer": 3,
+      "scale": 100
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 2100,
+      "y": 920,
+      "z_layer": 3,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 500,
+      "y": 940,
+      "z_layer": 3,
+      "scale": 80
+    }
+  ],
+  "hint_text": "Look near the sandcastle in the middle of the beach!",
+  "density": {
+    "crowd": 13,
+    "total": 18
+  }
+}

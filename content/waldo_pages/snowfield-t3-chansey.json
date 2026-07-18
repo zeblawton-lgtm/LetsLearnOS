@@ -1,0 +1,264 @@
+{
+  "id": "snowfield-t3-chansey",
+  "theme": "snowfield",
+  "difficulty": 3,
+  "canvas": {
+    "w": 3200,
+    "h": 1000
+  },
+  "target": {
+    "species": 113,
+    "x": 1450,
+    "y": 720,
+    "scale": 130,
+    "bbox": [
+      1385,
+      655,
+      130,
+      130
+    ],
+    "occlusion_pct": 0.0
+  },
+  "decoys": [
+    {
+      "species": 39,
+      "x": 1280,
+      "y": 700,
+      "scale": 110
+    },
+    {
+      "species": 174,
+      "x": 1620,
+      "y": 740,
+      "scale": 95
+    },
+    {
+      "species": 35,
+      "x": 1350,
+      "y": 810,
+      "scale": 120
+    },
+    {
+      "species": 182,
+      "x": 1580,
+      "y": 680,
+      "scale": 105
+    }
+  ],
+  "entities": [
+    {
+      "asset_id": "prop:tree-pine",
+      "type": "prop",
+      "x": 250,
+      "y": 450,
+      "z_layer": 0,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:tree-pine",
+      "type": "prop",
+      "x": 2950,
+      "y": 450,
+      "z_layer": 0,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 400,
+      "y": 450,
+      "z_layer": 1,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:snowman",
+      "type": "prop",
+      "x": 800,
+      "y": 550,
+      "z_layer": 1,
+      "scale": 300
+    },
+    {
+      "asset_id": "prop:tree-pine",
+      "type": "prop",
+      "x": 2400,
+      "y": 500,
+      "z_layer": 1,
+      "scale": 400
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 1800,
+      "y": 620,
+      "z_layer": 1,
+      "scale": 250
+    },
+    {
+      "asset_id": "prop:rock",
+      "type": "prop",
+      "x": 2800,
+      "y": 600,
+      "z_layer": 1,
+      "scale": 180
+    },
+    {
+      "asset_id": "pokemon:25",
+      "type": "pokemon",
+      "x": 300,
+      "y": 750,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "pokemon:37",
+      "type": "pokemon",
+      "x": 550,
+      "y": 720,
+      "z_layer": 2,
+      "scale": 130,
+      "flip": true
+    },
+    {
+      "asset_id": "npc:villager-a",
+      "type": "npc",
+      "x": 950,
+      "y": 680,
+      "z_layer": 2,
+      "scale": 160
+    },
+    {
+      "asset_id": "npc:vendor",
+      "type": "npc",
+      "x": 1100,
+      "y": 700,
+      "z_layer": 2,
+      "scale": 170
+    },
+    {
+      "asset_id": "pokemon:133",
+      "type": "pokemon",
+      "x": 1250,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:172",
+      "type": "pokemon",
+      "x": 1500,
+      "y": 850,
+      "z_layer": 2,
+      "scale": 100
+    },
+    {
+      "asset_id": "npc:trainer",
+      "type": "npc",
+      "x": 1700,
+      "y": 710,
+      "z_layer": 2,
+      "scale": 165
+    },
+    {
+      "asset_id": "pokemon:58",
+      "type": "pokemon",
+      "x": 2100,
+      "y": 690,
+      "z_layer": 2,
+      "scale": 150
+    },
+    {
+      "asset_id": "pokemon:216",
+      "type": "pokemon",
+      "x": 2350,
+      "y": 730,
+      "z_layer": 2,
+      "scale": 140
+    },
+    {
+      "asset_id": "npc:villager-c",
+      "type": "npc",
+      "x": 2600,
+      "y": 650,
+      "z_layer": 2,
+      "scale": 155
+    },
+    {
+      "asset_id": "pokemon:128",
+      "type": "pokemon",
+      "x": 2900,
+      "y": 780,
+      "z_layer": 2,
+      "scale": 280
+    },
+    {
+      "asset_id": "pokemon:143",
+      "type": "pokemon",
+      "x": 600,
+      "y": 820,
+      "z_layer": 2,
+      "scale": 200
+    },
+    {
+      "asset_id": "pokemon:1",
+      "type": "pokemon",
+      "x": 450,
+      "y": 850,
+      "z_layer": 2,
+      "scale": 130
+    },
+    {
+      "asset_id": "pokemon:74",
+      "type": "pokemon",
+      "x": 2500,
+      "y": 820,
+      "z_layer": 2,
+      "scale": 120
+    },
+    {
+      "asset_id": "pokemon:132",
+      "type": "pokemon",
+      "x": 1950,
+      "y": 890,
+      "z_layer": 2,
+      "scale": 110
+    },
+    {
+      "asset_id": "pokemon:39",
+      "type": "pokemon",
+      "x": 1800,
+      "y": 910,
+      "z_layer": 3,
+      "scale": 125
+    },
+    {
+      "asset_id": "prop:snowman",
+      "type": "prop",
+      "x": 1657.0,
+      "y": 680,
+      "z_layer": 3,
+      "scale": 280
+    },
+    {
+      "asset_id": "prop:bench",
+      "type": "prop",
+      "x": 2200,
+      "y": 880,
+      "z_layer": 3,
+      "scale": 200
+    },
+    {
+      "asset_id": "prop:tree-pine",
+      "type": "prop",
+      "x": 1100,
+      "y": 850,
+      "z_layer": 4,
+      "scale": 150
+    }
+  ],
+  "hint_text": "Find the pink egg-pokemon hiding among the snowmen!",
+  "math_hook": {
+    "skill": "count",
+    "max": 5
+  }
+}
