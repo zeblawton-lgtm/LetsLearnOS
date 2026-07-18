@@ -8,6 +8,10 @@ The learning experience works without an internet connection. OpenAI narration
 is an opt-in enhancement; when it is disabled or unavailable, the app uses the
 device's browser speech engine.
 
+<p align="center">
+  <img src="docs/media/globe-explorer.png" width="960" alt="LetsLearnOS interactive globe explorer showing North America and child-friendly country facts">
+</p>
+
 ## Highlights
 
 - Math, Spanish, geography, space, science, stories, art, puzzles, memory,
@@ -18,6 +22,45 @@ device's browser speech engine.
 - No child-facing AI chat and no AI-generated math or lessons.
 - No API credentials, proprietary character art, or commercial music in the
   public source tree.
+
+## See it in action
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/media/globe-tour.gif" alt="LetsLearnOS demo moving from learner selection to the interactive globe and exploring continents">
+      <br><sub><b>Explore the world.</b> Choose a learner, open the globe, and move between continents.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/media/space-adventure.gif" alt="LetsLearnOS demo exploring the animated solar system, opening an Earth lesson, and starting a rocket countdown">
+      <br><sub><b>Journey through space.</b> Visit Earth, inspect the solar system, and start a rocket countdown.</sub>
+    </td>
+  </tr>
+</table>
+
+The gallery uses synthetic sample profiles and the repository's public-safe
+fallback artwork. It contains no credentials, private endpoints, or
+redistribution-restricted assets.
+
+## Learning experiences
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/media/solar-system.png" alt="LetsLearnOS animated solar system with planet controls">
+      <br><sub><b>Interactive astronomy</b> with orbiting planets, facts, zoom controls, and large touch targets.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/media/science-lab.png" alt="LetsLearnOS 3D fire-safety science activity">
+      <br><sub><b>Hands-on science</b> with a 3D fire-safety scene and positive, age-appropriate guidance.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="docs/media/usa-map.png" width="960" alt="LetsLearnOS interactive map of the United States with state exploration controls">
+  <br><sub><b>Geography made tactile:</b> explore all 50 states, hear names, and discover child-friendly facts.</sub>
+</p>
 
 ## Develop locally
 
