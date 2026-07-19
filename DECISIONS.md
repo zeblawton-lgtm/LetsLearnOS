@@ -46,3 +46,11 @@ and historical credentials cannot be recovered from public commits.
 **Decision:** The kiosk runs as a `kids` account without sudo, an interactive
 shell, or a desktop. A parent PIN controls administrative UI. OS-changing work is
 provided as reviewed scripts for a human administrator to run.
+
+## ADR-007 — Separate adult-facing showcase (2026-07-19)
+
+**Decision:** The public marketing and project-explainer site is a separate
+Next.js package deployed through ChatGPT Sites. It is written for parents,
+educators, and contributors, not child users, and has no chat, accounts, forms,
+analytics, visitor storage, or runtime API credentials. The kiosk remains
+offline-first and independent of the showcase deployment.

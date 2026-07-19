@@ -100,6 +100,14 @@ A release is ready only when all of the following are true:
 - The ISO build command exists and CI can reproduce the release artifact.
 - Public setup, security, licensing, and parent documentation are current.
 
+## 10. Adult-facing public showcase
+
+LetsLearnOS may include a separately deployed public showcase for parents,
+educators, and open-source contributors. The showcase explains and links to the
+project; it is not a learning activity and does not target child visitors. It
+has no child-facing chat, accounts, forms, analytics, visitor storage, or API
+credentials. The offline kiosk remains the primary deliverable.
+
 ## Non-goals
 
 - Child-facing AI chat or AI-generated lessons.
