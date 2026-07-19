@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { copyFile, mkdir, rm, stat } from "node:fs/promises";
+import { copyFile, mkdir, rename, rm, stat } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -26,7 +26,11 @@ await new Promise((resolve, reject) => {
   });
 });
 
-await stat(join(outputDirectory, "server", "index.js"));
+const serverDirectory = join(outputDirectory, "server");
+const workerEntry = join(serverDirectory, "index.js");
+await rename(workerEntry, join(serverDirectory, "vinext-handler.js"));
+await copyFile(join(projectRoot, "scripts", "sites-worker.mjs"), workerEntry);
+await stat(workerEntry);
 await mkdir(join(outputDirectory, ".openai"), { recursive: true });
 await copyFile(
   join(projectRoot, ".openai", "hosting.json"),
