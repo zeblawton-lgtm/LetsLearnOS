@@ -1,5 +1,7 @@
 .next
+dist
 node_modules
+out
 *.tsbuildinfo
 .env*
 !.env.example

@@ -10,6 +10,7 @@ const turbopackRoot = existsSync(join(workspaceRoot, "pnpm-workspace.yaml"))
   : projectRoot;
 
 const nextConfig: NextConfig = {
+  output: "export",
   poweredByHeader: false,
   reactStrictMode: true,
   turbopack: {
