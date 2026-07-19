@@ -25,6 +25,13 @@ metadata; LetsLearnOS does not redistribute third-party game descriptions.
 Correct, retry, tap, and celebration cues are synthesized at runtime with the
 Web Audio API. No sound-effect recordings are bundled.
 
+## Icons
+
+Navigation and interface controls use [Lucide](https://lucide.dev/) outline
+icons. Lucide is distributed under the ISC License, with portions derived from
+Feather under the MIT License. The dependency's license notice is included in
+the installed package and preserved by the normal package installation flow.
+
 ## Maps
 
 Canada, Central America, and South America outlines were derived from the

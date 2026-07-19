@@ -9,7 +9,7 @@ is an opt-in enhancement; when it is disabled or unavailable, the app uses the
 device's browser speech engine.
 
 <p align="center">
-  <img src="docs/media/globe-explorer.png" width="960" alt="LetsLearnOS interactive globe explorer showing North America and child-friendly country facts">
+  <img src="docs/media/home-dashboard.png" width="960" alt="LetsLearnOS learning dashboard with colorful activity cards and public outline icons for math, languages, geography, science, space, art, music, and puzzles">
 </p>
 
 ## Highlights
@@ -38,9 +38,9 @@ device's browser speech engine.
   </tr>
 </table>
 
-The gallery uses synthetic sample profiles and the repository's public-safe
-fallback artwork. It contains no credentials, private endpoints, or
-redistribution-restricted assets.
+The gallery uses synthetic sample profiles, permissively licensed interface
+icons, and the repository's public-safe fallback artwork. It contains no
+credentials, private endpoints, or redistribution-restricted assets.
 
 ## Learning experiences
 
@@ -55,12 +55,17 @@ redistribution-restricted assets.
       <br><sub><b>Hands-on science</b> with a 3D fire-safety scene and positive, age-appropriate guidance.</sub>
     </td>
   </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/media/globe-explorer.png" alt="LetsLearnOS interactive globe explorer showing North America and child-friendly country facts">
+      <br><sub><b>Explore the globe</b> with continent controls, country facts, narration, and 3D movement.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/media/usa-map.png" alt="LetsLearnOS interactive map of the United States with state exploration controls">
+      <br><sub><b>Geography made tactile</b> with all 50 states, spoken names, and child-friendly facts.</sub>
+    </td>
+  </tr>
 </table>
-
-<p align="center">
-  <img src="docs/media/usa-map.png" width="960" alt="LetsLearnOS interactive map of the United States with state exploration controls">
-  <br><sub><b>Geography made tactile:</b> explore all 50 states, hear names, and discover child-friendly facts.</sub>
-</p>
 
 ## Develop locally
 
