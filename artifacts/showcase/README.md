@@ -9,7 +9,7 @@ From the repository root:
     pnpm install
     pnpm --filter @workspace/letslearnos-showcase dev
 
-The production build uses Next.js static export and packages the result in
-dist/ for ChatGPT Sites.
+The production build uses Vinext to package the Next.js interface for the
+ChatGPT Sites runtime in dist/.
 
 The ChatGPT Sites project identifier is stored in .openai/hosting.json. Runtime secrets must be configured in Sites and never committed; this static showcase does not require any.
