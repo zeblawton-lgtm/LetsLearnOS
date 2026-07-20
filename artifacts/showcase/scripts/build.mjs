@@ -1,5 +1,7 @@
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
+  access,
   copyFile,
   mkdir,
   readFile,
@@ -45,53 +47,93 @@ await new Promise((resolve, reject) => {
 
 await rename(exportDirectory, outputDirectory);
 
-const htmlPath = join(outputDirectory, "index.html");
-let document = await readFile(htmlPath, "utf8");
-const stylesheetPattern =
-  /<link\b(?=[^>]*\brel=["']stylesheet["'])(?=[^>]*\bhref=["']([^"']+)["'])[^>]*>/gi;
-const stylesheets = [...document.matchAll(stylesheetPattern)];
-
-for (const stylesheet of stylesheets) {
-  const href = stylesheet[1];
-  if (!href.startsWith("/")) {
-    throw new Error(`Cannot inline non-local stylesheet: ${href}`);
+async function findExportedPage(candidates) {
+  for (const candidate of candidates) {
+    const path = join(outputDirectory, candidate);
+    try {
+      await access(path);
+      return path;
+    } catch {
+      // Try the next static-export shape.
+    }
   }
 
-  const stylesheetPath = join(outputDirectory, href.split("?")[0].slice(1));
-  const css = await readFile(stylesheetPath, "utf8");
-  document = document.replace(stylesheet[0], `<style>${css}</style>`);
+  throw new Error(`Missing exported page: ${candidates.join(" or ")}`);
 }
 
-document = document
-  .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
-  .replace(
-    /<link\b(?=[^>]*\brel=["'](?:modulepreload|preload)["'])(?=[^>]*\bas=["']script["'])[^>]*>/gi,
-    "",
-  )
-  .replace(/<link\b[^>]*\brel=["']modulepreload["'][^>]*>/gi, "");
+async function prepareDocument(htmlPath, inlineScript = null) {
+  let page = await readFile(htmlPath, "utf8");
+  const stylesheetPattern =
+    /<link\b(?=[^>]*\brel=["']stylesheet["'])(?=[^>]*\bhref=["']([^"']+)["'])[^>]*>/gi;
+  const stylesheets = [...page.matchAll(stylesheetPattern)];
 
-if (
-  /<script\b/i.test(document) ||
-  /<link\b[^>]*\brel=["']stylesheet["']/i.test(document) ||
-  document.includes("/_next/")
-) {
-  throw new Error(
-    "Static showcase still contains a runtime script or external asset",
-  );
+  for (const stylesheet of stylesheets) {
+    const href = stylesheet[1];
+    if (!href.startsWith("/")) {
+      throw new Error(`Cannot inline non-local stylesheet: ${href}`);
+    }
+
+    const stylesheetPath = join(outputDirectory, href.split("?")[0].slice(1));
+    const css = await readFile(stylesheetPath, "utf8");
+    page = page.replace(stylesheet[0], `<style>${css}</style>`);
+  }
+
+  page = page
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(
+      /<link\b(?=[^>]*\brel=["'](?:modulepreload|preload)["'])(?=[^>]*\bas=["']script["'])[^>]*>/gi,
+      "",
+    )
+    .replace(/<link\b[^>]*\brel=["']modulepreload["'][^>]*>/gi, "");
+
+  if (
+    /<script\b/i.test(page) ||
+    /<link\b[^>]*\brel=["']stylesheet["']/i.test(page) ||
+    page.includes("/_next/")
+  ) {
+    throw new Error("Static showcase still contains a framework runtime asset");
+  }
+
+  if (inlineScript !== null) {
+    if (inlineScript.toLowerCase().includes("</script")) {
+      throw new Error("Demo script contains an unsafe closing script tag");
+    }
+    page = page.replace("</body>", `<script>${inlineScript}</script></body>`);
+  }
+
+  await writeFile(htmlPath, page);
+  return page;
 }
 
-await writeFile(htmlPath, document);
+const homePath = await findExportedPage(["index.html"]);
+const demoPath = await findExportedPage(["demo.html", "demo/index.html"]);
+const demoGameScript = await readFile(
+  join(projectRoot, "scripts", "demo-game.js"),
+  "utf8",
+);
+const demoScriptHash = createHash("sha256")
+  .update(demoGameScript)
+  .digest("base64");
+
+const homeDocument = await prepareDocument(homePath);
+const demoDocument = await prepareDocument(demoPath, demoGameScript);
 
 const serverDirectory = join(outputDirectory, "server");
 await mkdir(serverDirectory, { recursive: true });
 
 const icon = await readFile(join(projectRoot, "app", "icon.svg"), "utf8");
-const workerSource = `const DOCUMENT = ${JSON.stringify(document)};
+const homeContentSecurityPolicy =
+  "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'";
+const demoContentSecurityPolicy = `${homeContentSecurityPolicy}; script-src 'sha256-${demoScriptHash}'`;
+
+const workerSource = `const HOME_DOCUMENT = ${JSON.stringify(homeDocument)};
+const DEMO_DOCUMENT = ${JSON.stringify(demoDocument)};
 const ICON = ${JSON.stringify(icon)};
+const HOME_CSP = ${JSON.stringify(homeContentSecurityPolicy)};
+const DEMO_CSP = ${JSON.stringify(demoContentSecurityPolicy)};
 
 const securityHeaders = {
   "cache-control": "public, max-age=300",
-  "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
   "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
   "referrer-policy": "strict-origin-when-cross-origin",
   "x-content-type-options": "nosniff",
@@ -100,6 +142,17 @@ const securityHeaders = {
 
 function responseFor(request, body, init) {
   return new Response(request.method === "HEAD" ? null : body, init);
+}
+
+function pageResponse(request, document, contentSecurityPolicy) {
+  return responseFor(request, document, {
+    status: 200,
+    headers: {
+      ...securityHeaders,
+      "content-security-policy": contentSecurityPolicy,
+      "content-type": "text/html; charset=utf-8",
+    },
+  });
 }
 
 export default {
@@ -114,10 +167,11 @@ export default {
     const { pathname } = new URL(request.url);
 
     if (pathname === "/" || pathname === "/index.html") {
-      return responseFor(request, DOCUMENT, {
-        status: 200,
-        headers: { ...securityHeaders, "content-type": "text/html; charset=utf-8" },
-      });
+      return pageResponse(request, HOME_DOCUMENT, HOME_CSP);
+    }
+
+    if (pathname === "/demo" || pathname === "/demo/" || pathname === "/demo.html") {
+      return pageResponse(request, DEMO_DOCUMENT, DEMO_CSP);
     }
 
     if (pathname === "/icon.svg" || pathname === "/favicon.ico") {

@@ -1,17 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="ball" cx="30%" cy="22%" r="84%">
-      <stop offset="0" stop-color="#d7ffe3" />
-      <stop offset=".35" stop-color="#43d78c" />
-      <stop offset=".72" stop-color="#16a56e" />
-      <stop offset="1" stop-color="#07573f" />
-    </radialGradient>
+    <linearGradient id="mint" x1="8" y1="7" x2="57" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d8ffe4" />
+      <stop offset=".48" stop-color="#54db93" />
+      <stop offset="1" stop-color="#087657" />
+    </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="30" fill="url(#ball)" />
-  <g fill="none" stroke="#07110e" stroke-linecap="round" stroke-width="3">
-    <path d="M2 33c16 3 44 1 60-2" />
-    <path d="M34 2c-1 17-4 41-8 60" />
-    <path d="M3 20c18 3 24 23 18 40" />
-    <path d="M59 11C43 22 42 45 55 57" />
-  </g>
+  <rect width="64" height="64" rx="18" fill="#07110e" />
+  <path d="M13 13h15v16H13zM34 13h17v9c0 10-7 16-17 16zM13 35h15v16H22c-6 0-9-4-9-10zM34 44c0-6 5-11 11-11h6v18H34z" fill="url(#mint)" />
 </svg>

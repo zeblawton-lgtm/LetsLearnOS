@@ -104,9 +104,12 @@ A release is ready only when all of the following are true:
 
 LetsLearnOS may include a separately deployed public showcase for parents,
 educators, and open-source contributors. The showcase explains and links to the
-project; it is not a learning activity and does not target child visitors. It
-has no child-facing chat, accounts, forms, analytics, visitor storage, or API
-credentials. The offline kiosk remains the primary deliverable.
+project and may include a clearly labeled, deterministic sample activity for
+grown-ups to evaluate. The sample has no profiles, child-facing chat, forms,
+analytics, cookies, network API calls, persistent browser storage, or API
+credentials; all state exists only in memory and resets on reload. The showcase
+does not target child visitors, and the offline kiosk remains the primary
+deliverable.
 
 ## Non-goals
 

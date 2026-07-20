@@ -53,6 +53,9 @@ jobs:
       - name: Build frontend
         run: pnpm --filter @workspace/letslearnos build
 
+      - name: Build public showcase and demo
+        run: pnpm --filter @workspace/letslearnos-showcase build
+
       - name: Build backend
         run: pnpm --filter @workspace/api-server build
 

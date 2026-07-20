@@ -54,3 +54,11 @@ Next.js package deployed through ChatGPT Sites. It is written for parents,
 educators, and contributors, not child users, and has no chat, accounts, forms,
 analytics, visitor storage, or runtime API credentials. The kiosk remains
 offline-first and independent of the showcase deployment.
+
+## ADR-008 — Ephemeral public activity demo (2026-07-19)
+
+**Decision:** LetsLearnMoreOS may host a clearly labeled sample learning game
+for parents and educators to evaluate. The game uses deterministic authored
+questions and keeps its temporary round state only in JavaScript memory. It
+makes no API calls and uses no profiles, cookies, analytics, local storage,
+session storage, database, or AI-generated content; reloading resets it.

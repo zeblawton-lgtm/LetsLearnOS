@@ -1,11 +1,8 @@
-import type { ReactNode } from "react";
 import {
-  ArrowRight,
   BookOpen,
   Brain,
   Calculator,
   Check,
-  CircleDotDashed,
   FlaskConical,
   GitFork,
   Globe2,
@@ -24,10 +21,14 @@ import {
   Volume2,
   WifiOff,
 } from "lucide-react";
-
-const repositoryUrl = "https://github.com/zeblawton-lgtm/LetsLearnOS";
-const parentGuideUrl = repositoryUrl + "/blob/main/docs/parent-guide.md";
-const isoGuideUrl = repositoryUrl + "/blob/main/iso/README.md";
+import {
+  ArrowLink,
+  isoGuideUrl,
+  parentGuideUrl,
+  repositoryUrl,
+  SiteFooter,
+  SiteHeader,
+} from "./site-shell";
 
 const modules = [
   { name: "Math", icon: Calculator, tone: "rose" },
@@ -79,106 +80,63 @@ const principles = [
   },
 ] as const;
 
-function BasketballMark({ large = false }: { large?: boolean }) {
-  return (
-    <span
-      className={large ? "ball-mark ball-mark-large" : "ball-mark"}
-      aria-hidden="true"
-    >
-      <span className="ball-seam ball-seam-horizontal" />
-      <span className="ball-seam ball-seam-vertical" />
-      <span className="ball-seam ball-seam-arc-left" />
-      <span className="ball-seam ball-seam-arc-right" />
-    </span>
-  );
-}
-
-function ArrowLink({
-  href,
-  children,
-  secondary = false,
-}: {
-  href: string;
-  children: ReactNode;
-  secondary?: boolean;
-}) {
-  return (
-    <a
-      className={
-        secondary ? "button button-secondary" : "button button-primary"
-      }
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {children}
-      <ArrowRight aria-hidden="true" size={18} strokeWidth={2.4} />
-    </a>
-  );
-}
-
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="LetsLearnOS home">
-          <BasketballMark />
-          <span>LetsLearn</span>
-          <span className="brand-os">OS</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#modules">Modules</a>
-          <a href="#principles">Guardrails</a>
-          <a href="#learners">Learners</a>
-          <a href="#install">Install</a>
-        </nav>
-        <a
-          className="header-github"
-          href={repositoryUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <GitFork aria-hidden="true" size={18} />
-          GitHub
-        </a>
-      </header>
+      <SiteHeader active="overview" />
 
       <section className="hero" id="top">
-        <div className="court-line court-line-one" aria-hidden="true" />
-        <div className="court-line court-line-two" aria-hidden="true" />
+        <div className="signal-line signal-line-one" aria-hidden="true" />
+        <div className="signal-line signal-line-two" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow">
-            <span>Open source</span> · A learning kiosk for the family laptop
+            <span>LLM OS · Lets Learn More</span> · Open-source learning kiosk
           </p>
           <h1>
             Playful learning,
             <span> offline first.</span>
           </h1>
           <p className="hero-summary">
-            LetsLearnOS turns a laptop or 2-in-1 into a calm, touch-first
-            learning space for ages 3–7—without ads, accounts, trackers, or
-            child-facing chat.
+            LetsLearnMoreOS is a public window into LetsLearnOS: a calm,
+            touch-first learning space for ages 3–7 without ads, accounts,
+            trackers, or child-facing chat.
           </p>
           <div className="hero-actions">
-            <ArrowLink href={repositoryUrl}>Explore the project</ArrowLink>
-            <ArrowLink href={isoGuideUrl} secondary>
-              Build the kiosk
+            <ArrowLink href="/demo">Play the no-save demo</ArrowLink>
+            <ArrowLink href={repositoryUrl} secondary>
+              Explore the source
             </ArrowLink>
           </div>
           <p className="adult-note">
             <Check aria-hidden="true" size={17} />
             <span>
-              This showcase is for parents, educators, and contributors.
+              Here, LLM means Lets Learn More—not model-generated lessons.
             </span>
           </p>
         </div>
 
         <div
           className="hero-visual"
-          aria-label="A green basketball-inspired sphere beside a preview of LetsLearnOS module cards"
+          aria-label="Layered green learning cards with the Lets Learn More monogram and a module preview"
         >
-          <div className="sphere-shadow" aria-hidden="true" />
-          <BasketballMark large />
+          <div className="visual-glow" aria-hidden="true" />
+          <div className="monogram-panel" aria-hidden="true">
+            <p>LETS LEARN MORE</p>
+            <strong>LLM</strong>
+            <span>OS</span>
+            <div className="growth-bars">
+              <i />
+              <i />
+              <i />
+              <i />
+            </div>
+          </div>
+          <div className="signal-card signal-card-one" aria-hidden="true">
+            READ
+          </div>
+          <div className="signal-card signal-card-two" aria-hidden="true">
+            MAKE
+          </div>
           <div className="preview-panel">
             <div className="preview-bar">
               <span />
@@ -204,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="score-strip" aria-label="Project highlights">
+      <div className="fact-strip" aria-label="Project highlights">
         <span>
           <i /> Ages 3–7
         </span>
@@ -225,11 +183,11 @@ export default function Home() {
       <section className="modules section-shell" id="modules">
         <div className="section-heading split-heading">
           <div>
-            <p className="section-number">01 · THE PLAYBOOK</p>
+            <p className="section-number">01 · MODULES</p>
             <h2>
               Fourteen ways to learn.
               <br />
-              One calm home court.
+              One calm system.
             </h2>
           </div>
           <p>
@@ -285,9 +243,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        className="demo-invite section-shell"
+        aria-labelledby="demo-invite-title"
+      >
+        <div className="demo-invite-card">
+          <p className="section-number">03 · TRY IT</p>
+          <h2 id="demo-invite-title">A real activity. Zero saved data.</h2>
+          <p>
+            Open Number Garden, play five deterministic rounds, then refresh.
+            Everything resets because the demo never creates a profile or writes
+            to browser storage.
+          </p>
+          <ArrowLink href="/demo">Open the live demo</ArrowLink>
+        </div>
+      </section>
+
       <section className="learners section-shell" id="learners">
         <div className="section-heading">
-          <p className="section-number">03 · LEARNING LANES</p>
+          <p className="section-number">04 · LEARNING LANES</p>
           <h2>
             Two profiles. One promise:
             <br />
@@ -344,10 +318,8 @@ export default function Home() {
 
       <section className="install section-shell" id="install">
         <div className="install-card">
-          <div className="install-court" aria-hidden="true">
-            <CircleDotDashed size={300} strokeWidth={0.65} />
-          </div>
-          <p className="section-number section-number-lime">04 · OPEN SOURCE</p>
+          <div className="install-pattern" aria-hidden="true" />
+          <p className="section-number section-number-lime">05 · OPEN SOURCE</p>
           <h2>
             Bring learning back
             <br />
@@ -363,22 +335,19 @@ export default function Home() {
             <ArrowLink href={parentGuideUrl} secondary>
               Read the parent guide
             </ArrowLink>
+            <a
+              className="text-link"
+              href={isoGuideUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              ISO build guide
+            </a>
           </div>
         </div>
       </section>
 
-      <footer>
-        <a className="brand" href="#top">
-          <BasketballMark />
-          <span>LetsLearn</span>
-          <span className="brand-os">OS</span>
-        </a>
-        <p>Made for grown-ups building calmer learning spaces.</p>
-        <p className="legal">
-          Not affiliated with or endorsed by OpenAI. OpenAI is an optional API
-          provider. Third-party marks belong to their owners.
-        </p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

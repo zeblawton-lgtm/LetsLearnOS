@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LetsLearnOS | Playful learning, offline first",
+  title: "LetsLearnMoreOS | Playful learning, offline first",
   description:
-    "An open-source, touch-first learning kiosk for families, educators, and contributors.",
-  applicationName: "LetsLearnOS Playbook",
+    "The public project showcase and no-save demo for the open-source LetsLearnOS learning kiosk.",
+  applicationName: "LetsLearnMoreOS (LLM OS)",
   keywords: [
     "open source education",
     "offline learning",
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   openGraph: {
-    title: "LetsLearnOS | Playful learning, offline first",
+    title: "LetsLearnMoreOS | Playful learning, offline first",
     description:
-      "Fourteen calm, deterministic learning modules in one open-source kiosk.",
+      "Fourteen calm learning modules and a deterministic no-save demo.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
   colorScheme: "light",
-  themeColor: "#eef6eb",
+  themeColor: "#eff6ea",
   width: "device-width",
   initialScale: 1,
 };
