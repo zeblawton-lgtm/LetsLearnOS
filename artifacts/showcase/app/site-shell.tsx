@@ -4,6 +4,8 @@ import { ArrowRight, GitFork } from "lucide-react";
 export const repositoryUrl = "https://github.com/zeblawton-lgtm/LetsLearnOS";
 export const parentGuideUrl = repositoryUrl + "/blob/main/docs/parent-guide.md";
 export const isoGuideUrl = repositoryUrl + "/blob/main/iso/README.md";
+export const securityGuideUrl =
+  repositoryUrl + "/blob/main/docs/security/security-report.md";
 
 export function LearningMark() {
   return (
@@ -18,32 +20,45 @@ export function LearningMark() {
 export function SiteHeader({ active }: { active: "overview" | "demo" }) {
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="LetsLearnMoreOS home">
-        <LearningMark />
-        <span>LetsLearnMore</span>
-        <span className="brand-os">OS</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="/#modules">Modules</a>
-        <a href="/#principles">Guardrails</a>
-        <a
-          className={active === "demo" ? "nav-active" : undefined}
-          href="/demo"
-          aria-current={active === "demo" ? "page" : undefined}
+      <div className="header-shell">
+        <nav
+          className="nav-pill nav-pill-links"
+          aria-label="Primary navigation"
         >
-          Live demo
+          <a href="/#architecture">System</a>
+          <a href="/#modules">Modules</a>
+          <a href="/#resources">Guides</a>
+        </nav>
+
+        <a
+          className="nav-pill brand brand-pill"
+          href="/"
+          aria-label="LetsLearnMoreOS home"
+        >
+          <LearningMark />
+          <span>LetsLearnMore</span>
+          <span className="brand-os">OS</span>
         </a>
-        <a href="/#install">Install</a>
-      </nav>
-      <a
-        className="header-github"
-        href={repositoryUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <GitFork aria-hidden="true" size={18} />
-        GitHub
-      </a>
+
+        <div className="nav-pill nav-pill-actions">
+          <a
+            className="nav-source"
+            href={repositoryUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitFork aria-hidden="true" size={16} />
+            Source
+          </a>
+          <a
+            className={active === "demo" ? "nav-demo nav-active" : "nav-demo"}
+            href="/demo"
+            aria-current={active === "demo" ? "page" : undefined}
+          >
+            Live demo
+          </a>
+        </div>
+      </div>
     </header>
   );
 }
@@ -76,17 +91,59 @@ export function ArrowLink({
 
 export function SiteFooter() {
   return (
-    <footer>
-      <a className="brand" href="/">
-        <LearningMark />
-        <span>LetsLearnMore</span>
-        <span className="brand-os">OS</span>
-      </a>
-      <p>Made for grown-ups building calmer learning spaces.</p>
-      <p className="legal">
-        LLM OS means Lets Learn More OS. Not affiliated with or endorsed by
-        OpenAI. OpenAI is an optional API provider.
-      </p>
+    <footer className="site-footer">
+      <div className="footer-grid">
+        <div className="footer-intro">
+          <a className="brand" href="/">
+            <LearningMark />
+            <span>LetsLearnMore</span>
+            <span className="brand-os">OS</span>
+          </a>
+          <p>A calmer, inspectable learning computer for families.</p>
+        </div>
+
+        <div className="footer-column">
+          <span>Explore</span>
+          <a href="/demo">Live demo</a>
+          <a href="/#modules">Modules</a>
+          <a href="/#architecture">System map</a>
+        </div>
+
+        <div className="footer-column">
+          <span>Build</span>
+          <a href={parentGuideUrl} target="_blank" rel="noreferrer">
+            Parent guide
+          </a>
+          <a href={isoGuideUrl} target="_blank" rel="noreferrer">
+            ISO guide
+          </a>
+          <a href={securityGuideUrl} target="_blank" rel="noreferrer">
+            Security
+          </a>
+        </div>
+
+        <div className="footer-status">
+          <span className="status-chip">
+            <i /> Public source available
+          </span>
+          <strong>
+            Offline core.
+            <br />
+            Optional OpenAI voice.
+          </strong>
+          <p>No child-facing chat or model-generated lessons.</p>
+        </div>
+      </div>
+
+      <div className="footer-note">
+        <span>
+          MIT licensed · Made for grown-ups building calmer learning spaces.
+        </span>
+        <span>
+          LLM OS means Lets Learn More OS. Not affiliated with or endorsed by
+          OpenAI.
+        </span>
+      </div>
     </footer>
   );
 }

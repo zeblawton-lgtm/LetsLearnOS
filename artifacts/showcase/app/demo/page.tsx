@@ -11,7 +11,7 @@ import { SiteFooter, SiteHeader } from "../site-shell";
 export const metadata: Metadata = {
   title: "Number Garden demo | LetsLearnMoreOS",
   description:
-    "Try a deterministic LetsLearnOS math activity with no account and no saved data.",
+    "Try a deterministic LetsLearnOS math activity with no account and no saved game progress.",
 };
 
 export default function DemoPage() {
