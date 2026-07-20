@@ -8,7 +8,7 @@ The learning experience works without an internet connection. OpenAI narration
 is an opt-in enhancement; when it is disabled or unavailable, the app uses the
 device's browser speech engine.
 
-**[Explore LetsLearnMoreOS and play the no-save demo →](https://letslearnos-court.zeblawton.chatgpt.site)**
+**[Explore LetsLearnMoreOS and play the no-save demo →](https://letslearnmore-os.zeblawton.chatgpt.site)**
 
 LetsLearnMoreOS (LLM OS) is an adult-facing project tour for parents, educators,
 and contributors. Its isolated demo stores no game progress; the child learning
