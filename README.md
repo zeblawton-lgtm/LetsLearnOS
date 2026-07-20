@@ -15,6 +15,37 @@ and contributors. Its isolated demo stores no game progress; the child learning
 interface remains offline-first and chat-free.
 
 <p align="center">
+  <a href="https://letslearnmore-os.zeblawton.chatgpt.site">
+    <img src="docs/screenshots/01-public-hero.png" width="1200" alt="LetsLearnMoreOS editorial homepage introducing a calm learning computer with colorful learning-module cards">
+  </a>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/02-learning-in-action.png" alt="Number Garden preview beside the promise that learning should feel like a room children can explore rather than a feed">
+      <br><sub><b>A room to explore.</b> Clear activities, generous touch targets, and no engagement loops.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/03-system-architecture.png" alt="LetsLearnOS architecture showing parent control, the kiosk experience, offline services, and the family computer foundation">
+      <br><sub><b>Inspectable architecture.</b> Parent direction stays above the kiosk, local services, and optional OpenAI voice.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/04-fourteen-modules.png" alt="LetsLearnMoreOS module map organizing fourteen learning activities into foundations, discovery, creative play, and puzzles">
+      <br><sub><b>Fourteen ways to learn.</b> A connected system of foundations, discovery, creative play, and puzzles.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/05-number-garden-demo.png" alt="Live no-save Number Garden demo celebrating a correct missing-number answer with one star">
+      <br><sub><b>A real no-save demo.</b> Five deterministic rounds that reset completely on reload.</sub>
+    </td>
+  </tr>
+</table>
+
+## Inside the kiosk
+
+<p align="center">
   <img src="docs/media/home-dashboard.png" width="960" alt="LetsLearnOS learning dashboard with colorful activity cards and public outline icons for math, languages, geography, science, space, art, music, and puzzles">
 </p>
 
