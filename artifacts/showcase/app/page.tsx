@@ -114,7 +114,7 @@ const faqs = [
   {
     question: "What does the public demo save?",
     answer:
-      "No game progress. Number Garden keeps the current round only in JavaScript memory, makes no game API calls, and resets when the page reloads or closes.",
+      "No game progress. The six-experience sampler keeps temporary state only in JavaScript memory, makes no game API calls, and resets when the page reloads or closes.",
   },
   {
     question: "Can another family install it?",
@@ -225,7 +225,7 @@ export default function Home() {
           <a
             className="demo-film"
             href="/demo"
-            aria-label="Open Number Garden demo"
+            aria-label="Open the six-experience interactive demo"
           >
             <div className="film-topline">
               <span>NUMBER GARDEN</span>
@@ -437,8 +437,10 @@ export default function Home() {
                   <i>=</i>
                   <b>5</b>
                 </div>
-                <p>Five authored rounds. No account. No saved progress.</p>
-                <ArrowLink href="/demo">Open Number Garden</ArrowLink>
+                <p>
+                  Six authored mini-experiences. No account. No saved progress.
+                </p>
+                <ArrowLink href="/demo">Open the live sampler</ArrowLink>
               </aside>
             </div>
           </div>

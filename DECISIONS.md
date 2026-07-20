@@ -63,3 +63,12 @@ questions and keeps its temporary round state only in JavaScript memory. It
 makes no game API calls and uses no profiles, application cookies, analytics,
 local storage, session storage, database, or AI-generated content; reloading
 resets it.
+
+## ADR-009 — Representative public demo sampler (2026-07-19)
+
+**Decision:** The adult-facing showcase demo may present multiple compact,
+authored interactions that represent core kiosk experiences, including math,
+space, geography, and safety. These are lightweight showcase implementations,
+not a second persistence layer or a replacement for the kiosk modules. Every
+interaction remains deterministic and in-memory, makes no runtime game API
+calls, uses no profile or visitor storage, and resets completely on reload.

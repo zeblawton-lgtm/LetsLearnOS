@@ -11,8 +11,9 @@ device's browser speech engine.
 **[Explore LetsLearnMoreOS and play the no-save demo →](https://letslearnmore-os.zeblawton.chatgpt.site)**
 
 LetsLearnMoreOS (LLM OS) is an adult-facing project tour for parents, educators,
-and contributors. Its isolated demo stores no game progress; the child learning
-interface remains offline-first and chat-free.
+and contributors. Its six-experience sampler covers math, planets, rocket
+launch, the globe, fire safety, and countries without saving game progress; the
+child learning interface remains offline-first and chat-free.
 
 <p align="center">
   <a href="https://letslearnmore-os.zeblawton.chatgpt.site">
@@ -37,8 +38,8 @@ interface remains offline-first and chat-free.
       <br><sub><b>Fourteen ways to learn.</b> A connected system of foundations, discovery, creative play, and puzzles.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="docs/screenshots/05-number-garden-demo.png" alt="Live no-save Number Garden demo celebrating a correct missing-number answer with one star">
-      <br><sub><b>A real no-save demo.</b> Five deterministic rounds that reset completely on reload.</sub>
+      <img src="docs/screenshots/05-number-garden-demo.png" alt="Live no-save LetsLearnMoreOS sampler with six activity tabs and an interactive solar system focused on Earth">
+      <br><sub><b>A real no-save sampler.</b> Six deterministic mini-experiences that reset completely on reload.</sub>
     </td>
   </tr>
 </table>
@@ -84,22 +85,22 @@ credentials, private endpoints, or redistribution-restricted assets.
 <table>
   <tr>
     <td width="50%" valign="top">
-      <img src="docs/media/solar-system.png" alt="LetsLearnOS animated solar system with planet controls">
+      <img src="docs/screenshots/06-solar-system-interaction.png" alt="LetsLearnOS solar-system interaction showing the Sun, orbiting planets, zoom controls, and planet selector">
       <br><sub><b>Interactive astronomy</b> with orbiting planets, facts, zoom controls, and large touch targets.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="docs/media/science-lab.png" alt="LetsLearnOS 3D fire-safety science activity">
-      <br><sub><b>Hands-on science</b> with a 3D fire-safety scene and positive, age-appropriate guidance.</sub>
+      <img src="docs/screenshots/07-rocket-countdown-interaction.png" alt="LetsLearnOS rocket-launch interaction showing a rocket on the launchpad during the spoken countdown">
+      <br><sub><b>Launch a rocket</b> with an explorable 3D model, spoken countdown, liftoff, and positive celebration.</sub>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="docs/media/globe-explorer.png" alt="LetsLearnOS interactive globe explorer showing North America and child-friendly country facts">
+      <img src="docs/screenshots/08-globe-map-interaction.png" alt="LetsLearnOS interactive globe focused on Europe with France selected and child-friendly geography facts">
       <br><sub><b>Explore the globe</b> with continent controls, country facts, narration, and 3D movement.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="docs/media/usa-map.png" alt="LetsLearnOS interactive map of the United States with state exploration controls">
-      <br><sub><b>Geography made tactile</b> with all 50 states, spoken names, and child-friendly facts.</sub>
+      <img src="docs/media/science-lab.png" alt="LetsLearnOS 3D fire-safety science activity">
+      <br><sub><b>Hands-on science</b> with a 3D fire-safety scene and positive, age-appropriate guidance.</sub>
     </td>
   </tr>
 </table>
