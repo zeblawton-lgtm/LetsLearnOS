@@ -29,7 +29,7 @@ export default function DemoPage() {
           </p>
           <h1>
             Try the game.
-            <span> Leave no trail.</span>
+            <span> Leave no progress behind.</span>
           </h1>
           <p className="hero-summary">
             This is a real, deterministic activity from the LetsLearnOS design
@@ -40,16 +40,16 @@ export default function DemoPage() {
 
         <aside className="privacy-card" aria-label="Demo privacy facts">
           <ShieldCheck aria-hidden="true" size={30} />
-          <strong>Nothing is saved.</strong>
+          <strong>No game progress is saved.</strong>
           <ul>
             <li>
               <Check size={16} /> No login or profile
             </li>
             <li>
-              <Check size={16} /> No cookies or browser storage
+              <Check size={16} /> No game cookies or browser storage
             </li>
             <li>
-              <Check size={16} /> No analytics, network calls, or AI
+              <Check size={16} /> No analytics, game API calls, or AI
             </li>
           </ul>
         </aside>

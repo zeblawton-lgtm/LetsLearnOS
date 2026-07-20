@@ -249,7 +249,9 @@ export default function Home() {
       >
         <div className="demo-invite-card">
           <p className="section-number">03 · TRY IT</p>
-          <h2 id="demo-invite-title">A real activity. Zero saved data.</h2>
+          <h2 id="demo-invite-title">
+            A real activity. Zero saved progress.
+          </h2>
           <p>
             Open Number Garden, play five deterministic rounds, then refresh.
             Everything resets because the demo never creates a profile or writes

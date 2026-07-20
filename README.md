@@ -11,7 +11,7 @@ device's browser speech engine.
 **[Explore LetsLearnMoreOS and play the no-save demo →](https://letslearnos-court.zeblawton.chatgpt.site)**
 
 LetsLearnMoreOS (LLM OS) is an adult-facing project tour for parents, educators,
-and contributors. Its isolated demo stores nothing; the child learning
+and contributors. Its isolated demo stores no game progress; the child learning
 interface remains offline-first and chat-free.
 
 <p align="center">

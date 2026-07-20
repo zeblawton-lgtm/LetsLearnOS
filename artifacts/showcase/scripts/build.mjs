@@ -133,7 +133,7 @@ const HOME_CSP = ${JSON.stringify(homeContentSecurityPolicy)};
 const DEMO_CSP = ${JSON.stringify(demoContentSecurityPolicy)};
 
 const securityHeaders = {
-  "cache-control": "public, max-age=300",
+  "cache-control": "public, max-age=0, must-revalidate",
   "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
   "referrer-policy": "strict-origin-when-cross-origin",
   "x-content-type-options": "nosniff",

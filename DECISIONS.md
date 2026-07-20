@@ -60,5 +60,6 @@ offline-first and independent of the showcase deployment.
 **Decision:** LetsLearnMoreOS may host a clearly labeled sample learning game
 for parents and educators to evaluate. The game uses deterministic authored
 questions and keeps its temporary round state only in JavaScript memory. It
-makes no API calls and uses no profiles, cookies, analytics, local storage,
-session storage, database, or AI-generated content; reloading resets it.
+makes no game API calls and uses no profiles, application cookies, analytics,
+local storage, session storage, database, or AI-generated content; reloading
+resets it.
